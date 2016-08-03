@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import pageHeader from './pageHeader';
 
 // example class based component (smart component)
-class App extends Component {
+class Show extends Component {
   constructor(props) {
     super(props);
 
@@ -13,11 +12,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <pageHeader type="posts_list"></pageHeader>
+        <pageHeader />
         {this.props.children}
       </div>
     );
   }
 }
 
-export default App;
+export default Show;
