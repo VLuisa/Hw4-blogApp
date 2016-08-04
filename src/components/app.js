@@ -12,11 +12,17 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <div>
+      <div id="whole-blog">
+        <div id="header-nav">
           <NavBar />
+          <div id="blog-name">
+            <p>B</p>
+            <p>L</p>
+            <p>O</p>
+            <p>G</p>
+          </div>
         </div>
-        <div>
+        <div id="main-body">
           {this.props.children}
         </div>
       </div>

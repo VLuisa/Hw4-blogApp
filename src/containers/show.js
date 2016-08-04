@@ -55,7 +55,7 @@ class Show extends Component {
       if (this.state.editing) {
         return (
           <div>
-            <Textarea value={this.props.post.title} onChange={this.props.onChange} />
+            <input id="input-style" onChange={this.props.onChange} defaultValue={this.props.post.title} />
             {/* <Textarea value={props.post.tags} onChange={props.onChange} />
             <Textarea value={props.post.content} onChange={props.onChange} />*/}
           </div>
@@ -73,7 +73,7 @@ class Show extends Component {
       if (this.state.editing) {
         return (
           <div>
-            <Textarea value={this.props.post.tags} onChange={this.props.onChange} />
+            <input onChange={this.props.onChange} id="input-style" defaultValue={this.props.post.tags} />
             {/* <Textarea value={props.post.tags} onChange={props.onChange} />
             <Textarea value={props.post.content} onChange={props.onChange} />*/}
           </div>
@@ -90,7 +90,7 @@ class Show extends Component {
       if (this.state.editing) {
         return (
           <div>
-            <Textarea value={this.props.post.content} onChange={this.props.onChange} />
+            <textArea id="input-content" onChange={this.props.onChange} defaultValue={this.props.post.content} />
             {/* <Textarea value={props.post.tags} onChange={props.onChange} />
             <Textarea value={props.post.content} onChange={props.onChange} />*/}
           </div>
@@ -106,22 +106,24 @@ class Show extends Component {
   render() {
     return (
       <div id="displayPost">
-        <div onClick={() => { this.setState({ editing: !this.state.editing }); }}>
-          <button>Edit <EditIcon editing={this.state.editing} /></button>
-        </div>
-        <div onClick={() => this.props.deletePost(this.props.params.id)}>
-          <button>
-            Delete <FontAwesome id="fa-icon"
-              className="trash"
-              name="trash"
-            />
-          </button>
+        <div id="show-buttons">
+          <div onClick={() => { this.setState({ editing: !this.state.editing }); }}>
+            <button>Edit <EditIcon editing={this.state.editing} /></button>
+          </div>
+          <div onClick={() => this.props.deletePost(this.props.params.id)}>
+            <button>
+              Delete <FontAwesome id="fa-icon"
+                className="trash"
+                name="trash"
+              />
+            </button>
+          </div>
         </div>
         <div id="postTitle" onChange={this.handleTitleUpdate}>
           <h1>{this.renderTitle()}</h1>
         </div>
         <div id="postTags" onChange={this.handleTagsUpdate}>
-          {this.renderTags()}
+          <p>{this.renderTags()}</p>
         </div>
         <div id="postContent" onChange={this.handleContentUpdate}>
           {this.renderContent()}

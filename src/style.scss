@@ -1,7 +1,141 @@
+$accent-color: #B8DBD9;
+$dark-blue: #2F4550;
+$title-stack: 'Bungee Inline', cursive;
+
 body {
   font-family: "Roboto", sans-serif;
-  color: rgb(10%, 10%, 10%);
-  background: darken(white, 10%);
-  margin: 50px;
+  color: $dark-blue;
+  background: white;
+  margin: 0;
   font-size: 16px;
+  text-decoration: none;
+  height: 100%;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: $dark-blue;
+}
+
+button:focus {
+  outline: none;
+}
+
+#whole-blog {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#input-style{
+  color: $dark-blue;
+  font-size: 1em;
+  padding: 0.5em;
+  border: none;
+  border-bottom: 2px solid $accent-color;
+  width: 100%;
+}
+#input-content:focus {
+  outline: none;
+}
+
+#input-content{
+  color: $dark-blue;
+  font-size: 1em;
+  padding: 0.5em;
+  border: none;
+  border-bottom: 2px solid $accent-color;
+  background-color: white;
+  width: 100%;
+  height: 100px;
+}
+#blog-name {
+  font-family: $title-stack;
+  font-size: 4em;
+  line-height: 0.5em;
+  color: $dark-blue;
+
+}
+
+#header-nav {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  padding: 10px;
+  background-color: $accent-color;
+  text-align: center;
+  flex-grow: 1;
+  max-width: 200px;
+}
+
+#main-body {
+  margin: 50px;
+  flex-grow: 2;
+}
+
+#nav-bar {
+  button {
+    background-color: rgba(10, 10, 10, 0);
+    border: solid $dark-blue 2px;
+    color: $dark-blue;
+    text-decoration: none;
+    padding: 1em;
+    border-radius: 3px;
+    margin: 5px;
+    font-size: 0.8em;
+  }
+  button:hover {
+    background-color: darken($accent-color, 20%);
+    cursor: pointer;
+  }
+  align-items: flex-start;
+  border: none;
+  color: $dark-blue;
+  text-decoration: none;
+
+}
+
+#post-list:hover {
+  background-color: darken($accent-color, 10%);
+}
+
+#post-list {
+  background-color: lighten($accent-color, 10%);
+  color: $dark-blue;
+  padding: 1em;
+  border-radius: 3px;
+  margin: 0.5em;
+}
+
+#displayPost {
+  color: $dark-blue;
+}
+
+#postTags {
+  color: $accent-color;
+}
+
+#show-buttons {
+  button {
+    padding: 1em;
+    border: none;
+    background-color: $accent-color;
+    margin-right: 0.5em;
+    border-radius: 3px;
+    font-size: 14px;
+    color: $dark-blue;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: darken($accent-color, 10%);
+  }
+  display: flex;
+  flex-flow: row-wrap;
+}
+
+#newPostform {
+  input:focus {
+    outline: none;
+  }
 }

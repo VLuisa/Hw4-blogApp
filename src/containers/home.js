@@ -22,8 +22,10 @@ class Home extends Component {
         return (
           <div key={post.id}>
             <Link to={`posts/${post.id}`}>
-              <h2>{post.title}</h2>
-              <p>{post.tags}</p>
+              <div id="post-list">
+                <h2>{post.title}</h2>
+                <p>{post.tags}</p>
+              </div>
             </Link>
           </div>
         );
@@ -34,6 +36,7 @@ class Home extends Component {
   render() {
     return (
       <div>
+        <h2>All Posts</h2>
         {this.renderPosts()}
       </div>
     );

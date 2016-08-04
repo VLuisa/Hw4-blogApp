@@ -35,12 +35,13 @@ class New extends Component {
   render() {
     return (
       <div>
+        <h2>New Post</h2>
         <div id="newPostform">
-          <input onChange={this.onTitleChange} placeholder={"Post title..."} />
-          <input onChange={this.onTagsChange} placeholder={"Post tags..."} />
-          <input onChange={this.onContentChange} placeholder={"Content title..."} />
+          <input id="input-style" onChange={this.onTitleChange} placeholder={"Post title..."} />
+          <input id="input-style" onChange={this.onTagsChange} placeholder={"Post tags..."} />
+          <textarea id="input-content" onChange={this.onContentChange} placeholder={"Content title..."} />
         </div>
-        <div id="buttons">
+        <div id="show-buttons">
           <button onClick={this.handleCreatePost}>Create Post</button>
           <Link to="/"><button>Cancel</button></Link>
         </div>
