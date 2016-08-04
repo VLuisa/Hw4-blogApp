@@ -60,9 +60,10 @@ button:focus {
 
 #header-nav {
   display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  padding: 10px;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  /*padding: 10px;*/
+  height: 100vh;
   background-color: $accent-color;
   text-align: center;
   flex-grow: 1;
