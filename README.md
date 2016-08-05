@@ -1,1 +1,5 @@
-# js-starter with react react-router babel sass and eslint
+# HW4 - Redux Blog
+
+Created a the frontend for a blog webapp using redux and react. Created routes for multiple views as well as CRUD api calls.
+
+Everything seemed to work by the time of submission. Added styling for extra credit.
