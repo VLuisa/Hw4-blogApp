@@ -35,7 +35,7 @@ class New extends Component {
   render() {
     return (
       <div>
-        <h2>New Post</h2>
+        <span id="page-header">New Post</span>
         <div id="newPostform">
           <input id="input-style" onChange={this.onTitleChange} placeholder={"Post title..."} />
           <input id="input-style" onChange={this.onTagsChange} placeholder={"Post tags..."} />

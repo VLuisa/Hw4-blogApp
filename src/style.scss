@@ -23,6 +23,12 @@ button:focus {
   outline: none;
 }
 
+#page-header {
+  font-size: 1.5em;
+  font-family: $title-stack;
+  margin-bottom: 1em;
+}
+
 #whole-blog {
   display: flex;
   justify-content: flex-start;
@@ -62,6 +68,7 @@ button:focus {
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
+  padding-top: 10px;
   /*padding: 10px;*/
   height: 100vh;
   background-color: $accent-color;
@@ -122,7 +129,7 @@ button:focus {
     padding: 1em;
     border: none;
     background-color: $accent-color;
-    margin-right: 0.5em;
+    margin-right: 0.8em;
     border-radius: 3px;
     font-size: 14px;
     color: $dark-blue;
@@ -139,4 +146,8 @@ button:focus {
   input:focus {
     outline: none;
   }
+}
+
+#post-tags {
+  color: lighten($dark-blue, 20%);
 }

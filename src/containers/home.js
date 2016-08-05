@@ -24,7 +24,7 @@ class Home extends Component {
             <Link to={`posts/${post.id}`}>
               <div id="post-list">
                 <h2>{post.title}</h2>
-                <p>{post.tags}</p>
+                <p id="post-tags">{post.tags}</p>
               </div>
             </Link>
           </div>
@@ -36,7 +36,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h2>All Posts</h2>
+        <span id="page-header">All Posts</span>
         {this.renderPosts()}
       </div>
     );

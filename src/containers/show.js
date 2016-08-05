@@ -120,7 +120,7 @@ class Show extends Component {
           </div>
         </div>
         <div id="postTitle" onChange={this.handleTitleUpdate}>
-          <h1>{this.renderTitle()}</h1>
+          <h1 id="page-header">{this.renderTitle()}</h1>
         </div>
         <div id="postTags" onChange={this.handleTagsUpdate}>
           <p>{this.renderTags()}</p>
