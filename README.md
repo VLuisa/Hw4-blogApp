@@ -2,4 +2,4 @@
 
 Created the frontend for a blog webapp using redux and react. Created routes for multiple views as well as CRUD api calls.
 
-Everything seemed to work by the time of submission. Added styling for extra credit.
+Everything seemed to work by the time of submission. Added styling for extra credit: simple clean style with selected Google fonts, content textarea supports multiple line/new lines.
