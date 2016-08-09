@@ -20,7 +20,7 @@ export function fetchPosts() {
   // that gets called with dispatch
   return (dispatch) => {
       // can now dispatch stuff
-    axios.get(`${ROOT_URL}/posts${API_KEY}`).then(response => {
+    axios.get(`${ROOT_URL}/posts`).then(response => {
       // do something with response.data  (some json)
       dispatch({ type: 'FETCH_POSTS', payload: { posts: response.data } });
     }).catch(error => {
@@ -34,7 +34,7 @@ export function createPost(post) {
   // that gets called with dispatch
   return (dispatch) => {
       // can now dispatch stuff
-    axios.post(`${ROOT_URL}posts/${API_KEY}`, post).then(response => {
+    axios.post(`${ROOT_URL}posts/`, post).then(response => {
       browserHistory.push('/');
     }).catch(error => {
         // hit an error
@@ -48,7 +48,7 @@ export function fetchPost(id) {
   // that gets called with dispatch
   return (dispatch) => {
       // can now dispatch stuff
-    axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`).then(response => {
+    axios.get(`${ROOT_URL}/posts/${id}`).then(response => {
       // do something with response.data  (some json)
       dispatch({ type: 'FETCH_POST', payload: { post: response.data } });
     }).catch(error => {
@@ -62,7 +62,7 @@ export function updatePost(post, id) {
   // that gets called with dispatch
   return (dispatch) => {
       // can now dispatch stuff
-    axios.put(`${ROOT_URL}/posts/${id}${API_KEY}`, post).then(response => {
+    axios.put(`${ROOT_URL}/posts/${id}`, post).then(response => {
       dispatch(fetchPost(id));
     }).catch(error => {
         // hit an error
@@ -75,7 +75,7 @@ export function deletePost(id) {
   // that gets called with dispatch
   return (dispatch) => {
       // can now dispatch stuff
-    axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`).then(response => {
+    axios.delete(`${ROOT_URL}/posts/${id}`).then(response => {
       // do something with response.data  (some json)
       browserHistory.push('/');
     }).catch(error => {
