@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dartmouth-cs52/js-starter.git"
+    "url": "git+https://github.com/VLuisa/hw5-server.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dartmouth-cs52/js-starter/issues"
+    "url": "https://github.com/VLuisa/hw5-server/issues"
   },
-  "homepage": "https://github.com/dartmouth-cs52/js-starter#readme",
+  "homepage": "https://github.com/VLuisa/hw5-server",
   "devDependencies": {
     "autoprefixer": "^6.3.7",
     "babel-core": "^6.10.4",
