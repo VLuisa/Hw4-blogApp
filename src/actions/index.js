@@ -34,7 +34,7 @@ export function createPost(post) {
   // that gets called with dispatch
   return (dispatch) => {
       // can now dispatch stuff
-    axios.post(`${ROOT_URL}posts/`, post).then(response => {
+    axios.post(`${ROOT_URL}/posts/`, post).then(response => {
       browserHistory.push('/');
     }).catch(error => {
         // hit an error
