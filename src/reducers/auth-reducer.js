@@ -1,13 +1,15 @@
 import { ActionTypes } from '../actions';
 
-const AuthReducer = (posts = { all: [], post: null }, action) => {
+const AuthReducer = (auth = false, action) => {
   switch (action.type) {
-    case ActionTypes.FETCH_POSTS:
-      return { ...posts, all: action.payload.posts };
-    case ActionTypes.FETCH_POST:
-      return { ...posts, post: action.payload.post };
+    case ActionTypes.AUTH_USER:
+      return { authenticated: true };
+    case ActionTypes.DEAUTH_USER:
+      return { authenticated: false };
+    case ActionTypes.AUTH_ERROR:
+      return { authenticated: false };
     default:
-      return posts;
+      return auth;
   }
 };
 

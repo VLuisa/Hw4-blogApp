@@ -135,8 +135,7 @@ class Show extends Component {
 
 const mapStateToProps = (state) => (
   {
-    posts: state.posts.all,
-    post: state.posts.post,
+    authenticated: state.auth.authenticated,
   }
 );
 
