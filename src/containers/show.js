@@ -34,6 +34,7 @@ class Show extends Component {
     this.renderTitle = this.renderTitle.bind(this);
     this.renderTags = this.renderTags.bind(this);
     this.renderContent = this.renderContent.bind(this);
+    this.renderAuthor = this.renderAuthor.bind(this);
   }
   componentWillMount() {
     this.props.fetchPost(this.props.params.id);
@@ -98,6 +99,15 @@ class Show extends Component {
       } else {
         return <div dangerouslySetInnerHTML={{ __html: marked(this.props.post.content || '') }} />;
       }
+    }
+  }
+  renderAuthor() {
+    if (this.props.post != null) {
+      if (this.props.post.author) {
+        return (<div>Author: {this.props.post.author.username}</div>);
+      } else {
+        return <div>fetching author...</div>;
+      }
     } else {
       return <div>fetching post...</div>;
     }
@@ -122,12 +132,16 @@ class Show extends Component {
         <div id="postTitle" onChange={this.handleTitleUpdate}>
           <h1 id="page-header">{this.renderTitle()}</h1>
         </div>
+        <div id="postTags">
+          {this.renderAuthor()}
+        </div>
         <div id="postTags" onChange={this.handleTagsUpdate}>
           <p>{this.renderTags()}</p>
         </div>
         <div id="postContent" onChange={this.handleContentUpdate}>
           {this.renderContent()}
         </div>
+
       </div>
     );
   }

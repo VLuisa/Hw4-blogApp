@@ -13,6 +13,7 @@ class SignUp extends Component {
 
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onPasswordChange = this.onPasswordChange.bind(this);
+    this.onUsernameChange = this.onUsernameChange.bind(this);
     this.handleSignUp = this.handleSignUp.bind(this);
   }
   onEmailChange(event) {
@@ -22,9 +23,12 @@ class SignUp extends Component {
   onPasswordChange(event) {
     this.setState({ password: event.target.value });
   }
+  onUsernameChange(event) {
+    this.setState({ username: event.target.value });
+  }
   handleSignUp() {
     this.props.signupUser(
-      { email: this.state.email, password: this.state.password }
+      { email: this.state.email, password: this.state.password, author: this.state.username }
     );
   }
   render() {
@@ -32,7 +36,8 @@ class SignUp extends Component {
       <div>
         <span id="page-header">Sign Up</span>
         <div id="newPostform">
-          <input id="input-style" onChange={this.onEmailChange} placeholder={"Username..."} />
+          <input id="input-style" onChange={this.onEmailChange} placeholder={"Email..."} />
+          <input id="input-style" onChange={this.onUsernameChange} placeholder={"Username..."} />
           <input id="input-style" onChange={this.onPasswordChange} placeholder={"Password..."} />
         </div>
         <div id="show-buttons">
