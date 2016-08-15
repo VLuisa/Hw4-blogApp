@@ -1,23 +1,43 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 let FontAwesome = require('react-fontawesome');
+import { signoutUser } from '../actions/index.js';
 
 import { Link } from 'react-router';
 
 
 // function based "dumb" component with no state
-const NavBar = () => {
-  return (
-    <div id="nav-bar">
-      <Link to="/"><button>
-        Home <FontAwesome id="fa-icon"
-          className="home"
-          name="home"
-        />
-      </button></Link>
-      <Link to="posts/new"><button>New Post</button></Link>
-    </div>
-  );
-};
+class NavBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { showButton: '' };
+    this.handleSignOut = this.handleSignOut.bind(this);
+  }
+  handleSignOut() {
+    this.props.signoutUser();
+  }
+  render() {
+    return (
+      <div id="nav-bar">
+        <Link to="/"><button>
+          Home <FontAwesome id="fa-icon"
+            className="home"
+            name="home"
+          />
+        </button></Link>
+        <Link to="posts/new"><button>New Post</button></Link>
+        <Link to="/signin"><button>Sign In</button></Link>
+        <Link to="/signup"><button>Sign Up</button></Link>
+        <button onClick={this.handleSignOut}>Sign Out</button>
+      </div>
+    );
+  }
+}
 
+const mapStateToProps = (state) => (
+  {
+    showButton: state.auth.authenticated,
+  }
+);
 
-export default NavBar;
+export default connect(mapStateToProps, { signoutUser })(NavBar);
