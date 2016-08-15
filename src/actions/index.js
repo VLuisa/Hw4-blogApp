@@ -106,7 +106,7 @@ export function signinUser({ email, password }) {
   // returns a thunk method that takes dispatch as an argument (just like our create post method really)
   return (dispatch) => {
     // does an axios.post on the /signin endpoint
-    axios.post(`${ROOT_URL}/signin/${API_KEY}`, { email, password })
+    axios.post(`${ROOT_URL}/signin`, { email, password })
     // on success does:
     .then(response => {
       dispatch({ type: ActionTypes.AUTH_USER });
@@ -126,7 +126,7 @@ export function signupUser({ email, password }) {
   // returns a thunk method that takes dispatch as an argument (just like our create post method really)
   return (dispatch) => {
     // does an axios.post on the /signup endpoint (only difference from above)
-    axios.post(`${ROOT_URL}/signup/${API_KEY}`, { email, password })
+    axios.post(`${ROOT_URL}/signup`, { email, password })
     // on success does:
     .then(response => {
       dispatch({ type: ActionTypes.AUTH_USER });
