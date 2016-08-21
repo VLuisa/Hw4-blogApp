@@ -34,7 +34,7 @@ class Show extends Component {
     this.renderTitle = this.renderTitle.bind(this);
     this.renderTags = this.renderTags.bind(this);
     this.renderContent = this.renderContent.bind(this);
-    this.renderAuthor = this.renderAuthor.bind(this);
+    {/*this.renderAuthor = this.renderAuthor.bind(this);*/}
   }
   componentWillMount() {
     this.props.fetchPost(this.props.params.id);
@@ -101,17 +101,17 @@ class Show extends Component {
       }
     }
   }
-  renderAuthor() {
+  {/*renderAuthor() {
     if (this.props.post != null) {
-      if (this.props.post.author) {
-        return (<div>Author: {this.props.post.author.username}</div>);
+      if (this.props.post) {
+        return (<div>Author: {this.props.post.author}</div>);
       } else {
-        return <div>fetching author...</div>;
+        return (<div>fetching author...</div>);
       }
     } else {
-      return <div>fetching post...</div>;
+      return (<div>fetching post...</div>);
     }
-  }
+  }*/}
 
   render() {
     return (
@@ -133,7 +133,7 @@ class Show extends Component {
           <h1 id="page-header">{this.renderTitle()}</h1>
         </div>
         <div id="postTags">
-          {this.renderAuthor()}
+          {/*}<p>{this.renderAuthor()}</p>*/}
         </div>
         <div id="postTags" onChange={this.handleTagsUpdate}>
           <p>{this.renderTags()}</p>

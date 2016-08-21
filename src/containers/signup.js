@@ -28,7 +28,7 @@ class SignUp extends Component {
   }
   handleSignUp() {
     this.props.signupUser(
-      { email: this.state.email, password: this.state.password, author: this.state.username }
+      { email: this.state.email, password: this.state.password }
     );
   }
   render() {
@@ -37,7 +37,6 @@ class SignUp extends Component {
         <span id="page-header">Sign Up</span>
         <div id="newPostform">
           <input id="input-style" onChange={this.onEmailChange} placeholder={"Email..."} />
-          <input id="input-style" onChange={this.onUsernameChange} placeholder={"Username..."} />
           <input id="input-style" onChange={this.onPasswordChange} placeholder={"Password..."} />
         </div>
         <div id="show-buttons">
