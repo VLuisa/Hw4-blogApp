@@ -38,6 +38,7 @@ class SignUp extends Component {
         <div id="newPostform">
           <input id="input-style" onChange={this.onEmailChange} placeholder={"Email..."} />
           <input id="input-style" onChange={this.onPasswordChange} placeholder={"Password..."} />
+          <input id="input-style" onChange={this.onUsernameChange} placeholder={"Username..."} />
         </div>
         <div id="show-buttons">
           <button onClick={this.handleSignUp}>Sign Up</button>

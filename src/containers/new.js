@@ -50,5 +50,11 @@ class New extends Component {
   }
 }
 
+const mapStateToProps = (state) => (
+  {
+    authenticated: state.auth.authenticated,
+  }
+);
+
 // react-redux glue -- outputs Container that know state in props
-export default connect(null, { createPost })(New);
+export default connect(mapStateToProps, { createPost })(New);

@@ -16,6 +16,13 @@ class NavBar extends Component {
   handleSignOut() {
     this.props.signoutUser();
   }
+  renderSignOut() {
+    if (this.props.authenticated) {
+      return <button onClick={this.handleSignOut}>Sign Out</button>;
+    } else {
+      return <div></div>;
+    }
+  }
   render() {
     return (
       <div id="nav-bar">
@@ -28,7 +35,8 @@ class NavBar extends Component {
         <Link to="posts/new"><button>New Post</button></Link>
         <Link to="/signin"><button>Sign In</button></Link>
         <Link to="/signup"><button>Sign Up</button></Link>
-        <button onClick={this.handleSignOut}>Sign Out</button>
+        {this.renderSignOut()}
+        <div>username: {this.props.username}</div>
       </div>
     );
   }
@@ -36,7 +44,8 @@ class NavBar extends Component {
 
 const mapStateToProps = (state) => (
   {
-    showButton: state.auth.authenticated,
+    authenticated: state.auth.authenticated,
+    username: state.username,
   }
 );
 
