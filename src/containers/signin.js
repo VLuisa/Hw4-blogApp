@@ -9,10 +9,11 @@ class SignIn extends Component {
     super(props);
 
     // init component state here
-    this.state = { email: '', password: '' };
+    this.state = { email: '', password: '', author: '' };
 
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onPasswordChange = this.onPasswordChange.bind(this);
+    this.onUsernameChange = this.onUsernameChange.bind(this);
     this.handleSignIn = this.handleSignIn.bind(this);
   }
   onEmailChange(event) {
@@ -22,9 +23,12 @@ class SignIn extends Component {
   onPasswordChange(event) {
     this.setState({ password: event.target.value });
   }
+  onUsernameChange(event) {
+    this.setState({ author: event.target.value });
+  }
   handleSignIn() {
     this.props.signinUser(
-      { email: this.state.email, password: this.state.password }
+      { email: this.state.email, password: this.state.password, author: this.state.author }
     );
   }
   render() {
@@ -32,8 +36,10 @@ class SignIn extends Component {
       <div>
         <span id="page-header">Sign In</span>
         <div id="newPostform">
-          <input id="input-style" onChange={this.onEmailChange} placeholder={"Username..."} />
+          <input id="input-style" onChange={this.onEmailChange} placeholder={"Email..."} />
           <input id="input-style" onChange={this.onPasswordChange} placeholder={"Password..."} />
+          <input id="input-style" onChange={this.onUsernameChange} placeholder={"Username..."} />
+
         </div>
         <div id="show-buttons">
           <button onClick={this.handleSignIn}>Sign In</button>

@@ -103,13 +103,9 @@ class Show extends Component {
   }
   renderAuthor() {
     if (this.props.post != null) {
-      if (this.props.post) {
-        return (<div>Author: {this.props.post.author}</div>);
-      } else {
-        return (<div>fetching author...</div>);
-      }
+      return <div>{this.props.post.author.username}</div>;
     } else {
-      return (<div>fetching post...</div>);
+      return (<div>fetching author...</div>);
     }
   }
 
@@ -134,6 +130,7 @@ class Show extends Component {
         </div>
         <div id="postTags">
           {/* }<p>{this.renderAuthor()}</p>*/}
+          <span id="postTags">Author:{this.renderAuthor()}</span>
         </div>
         <div id="postTags" onChange={this.handleTagsUpdate}>
           <p>{this.renderTags()}</p>

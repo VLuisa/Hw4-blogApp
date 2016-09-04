@@ -36,7 +36,6 @@ class NavBar extends Component {
         <Link to="/signin"><button>Sign In</button></Link>
         <Link to="/signup"><button>Sign Up</button></Link>
         {this.renderSignOut()}
-        <div>username: {this.props.username}</div>
       </div>
     );
   }
@@ -45,7 +44,6 @@ class NavBar extends Component {
 const mapStateToProps = (state) => (
   {
     authenticated: state.auth.authenticated,
-    username: state.username,
   }
 );
 

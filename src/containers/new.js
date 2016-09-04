@@ -28,7 +28,7 @@ class New extends Component {
   }
   handleCreatePost() {
     this.props.createPost(
-      { title: this.state.title, tags: this.state.tags, content: this.state.content }
+      { title: this.state.title, tags: this.state.tags, content: this.state.content, author: this.props.author }
     );
   }
 
@@ -52,6 +52,7 @@ class New extends Component {
 
 const mapStateToProps = (state) => (
   {
+    // username: typeof localStorage.getItem('username'),
     authenticated: state.auth.authenticated,
   }
 );

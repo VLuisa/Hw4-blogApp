@@ -9,7 +9,7 @@ class SignUp extends Component {
     super(props);
 
     // init component state here
-    this.state = { email: '', password: '' };
+    this.state = { email: '', password: '', username: '' };
 
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onPasswordChange = this.onPasswordChange.bind(this);
@@ -28,7 +28,7 @@ class SignUp extends Component {
   }
   handleSignUp() {
     this.props.signupUser(
-      { email: this.state.email, password: this.state.password }
+      { email: this.state.email, password: this.state.password, username: this.state.username }
     );
   }
   render() {
